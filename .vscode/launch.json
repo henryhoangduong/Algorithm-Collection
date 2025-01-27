@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/mac/Projects/Algorithm",
+      "program": "/Users/mac/Projects/Algorithm/build/Debug/outDebug"
+    }
+  ]
+}
