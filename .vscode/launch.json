@@ -2,6 +2,34 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "TapeEquilibrium.Main",
+      "projectName": "Algorithm_8c694590"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "FrogJump.Main",
+      "projectName": "Algorithm_8c694590"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "OddOccurrencesInArray.Main",
+      "projectName": "Algorithm_8c694590"
+    },
+    {
+      "type": "java",
+      "name": "OddOccurrencesInArray",
+      "request": "launch",
+      "mainClass": "OddOccurrencesInArray.OddOccurrencesInArray",
+      "projectName": "Algorithm_8c694590"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "lldb",
       "request": "launch",
