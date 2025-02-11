@@ -31,14 +31,11 @@ public class Main {
         // Loop through the array from right to left
         for (int i = length - 1; i >= 0; i--) {
             // Multiply the current element in the result array by 'rightProduct'
-            System.out.println("i: " + i);
             result[i] *= rightProduct;
-            System.out.println("result of i: " + result[i]);
 
             // Multiply 'rightProduct' by the current element in nums for the next iteration
             // (suffix product)
             rightProduct *= nums[i];
-            System.out.println("rightProduct: " + rightProduct);
 
         }
     }

@@ -5,7 +5,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class main {
+public class triangle {
 
     public int minimumTotal(List<List<Integer>> triangle) {
         int n = triangle.size();
@@ -27,7 +27,7 @@ public class main {
         triangle.add(new ArrayList<>(List.of(6, 5, 7)));
         triangle.add(new ArrayList<>(List.of(4, 1, 8, 3)));
 
-        main main = new main();
+        triangle main = new triangle();
         System.out.println(main.minimumTotal(triangle));
     }
 }
