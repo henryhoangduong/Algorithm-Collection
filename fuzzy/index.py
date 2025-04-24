@@ -4,14 +4,18 @@ import operator
 import math
 import random
 
+df_full = pd.read_csv("./Iris.csv")
+df_full = df_full.drop(['Id'], axis=1)
+columns = list(df_full.columns)
+features = columns[:len(columns)-1]
+class_labels = list(df_full[columns[-1]])
+df = df_full[features]
+
 k = 3
 MAX_ITER = 100
-n = 0  # numbers of data points
+n = len(df)  # numbers of data points
 # fuzzy parameters
 m = 1.7
-
-df = pd.read_csv("./Iris.csv")
-
 
 def calculateClusterCenter(membership_matrix):
     cluster_mem_val = list(zip(*membership_matrix))
@@ -24,6 +28,7 @@ def calculateClusterCenter(membership_matrix):
         temp_num = []
         for i in range(n):
             data_point = list(df.iloc[i])
+            print(data_point)
             prod = [xraised[i] * val for val in data_point]
             temp_num.append(prod)
         numerator = map(sum, list(zip(*temp_num)))
@@ -42,7 +47,7 @@ def updateMembershipValue(membership_mat, cluster_centers):
         ]
         for j in range(k):
             den = sum(
-                [math.pow(float(distances[j] / distances[c]), p) for i in range(x)]
+                [math.pow(float(distances[j] / distances[c]), p) for c in range(k)]
             )
             membership_mat[i][j] = float(1 / den)
     return membership_mat
@@ -85,12 +90,16 @@ def fuzzyCMeansClustering():  # Third iteration Random vectors from data
         cluster_labels = getClusters(membership_mat)
         acc.append(cluster_labels)
 
-        if(curr == 0):
+        if curr == 0:
             print("Cluster Centers:")
             print(np.array(cluster_centers))
         curr += 1
     print("---------------------------")
     print("Partition matrix:")
     print(np.array(membership_mat))
-    #return cluster_labels, cluster_centers
+    # return cluster_labels, cluster_centers
     return cluster_labels, cluster_centers, acc
+
+
+if __name__ == "__main__":
+    labels, centers, acc = fuzzyCMeansClustering()
